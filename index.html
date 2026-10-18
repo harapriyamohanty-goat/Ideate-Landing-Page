@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080a0f" />
+  <meta name="description" content="Explore Techfest, IIT Bombay — a cinematic gateway to science, engineering and technology." />
+  <title>TECHFEST — Engineer Tomorrow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Techfest home"><span class="brand-mark">T<span>F</span></span><span class="brand-copy">TECHFEST <small>IIT BOMBAY</small></span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><b>MENU</b></button>
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+      <a href="#explore">Explore</a><a href="#competitions">Competitions</a><a href="#workshops">Workshops</a><a href="#about">About</a>
+      <a class="nav-cta" href="https://techfest.org/" target="_blank" rel="noreferrer">Official site <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-a" data-depth="0.16"></div><div class="hero-orbit orbit-b" data-depth="0.3"></div>
+      <div class="hero-copy" data-depth="0.06">
+        <p class="eyebrow"><span class="live-dot"></span> INDIA'S FRONTIER OF INNOVATION <span class="eyebrow-line"></span> 2026—27</p>
+        <h1 class="hero-title"><span>TECH</span><span class="title-second">FEST<span class="title-period">.</span></span></h1>
+        <p class="hero-tagline">Where intelligence<br><em>meets imagination.</em></p>
+        <p class="hero-description">A collision of science, engineering and ideas.<br>Built for the curious. Designed for what’s next.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#explore">Explore the festival <span>↗</span></a><a class="text-link" href="#competitions">Discover competitions <span>↓</span></a></div>
+      </div>
+      <div class="hero-stage" id="hero-stage" aria-label="Interactive 3D mechanical core">
+        <canvas id="core-canvas" aria-label="Decorative interactive 3D mechanical core"></canvas>
+        <div class="stage-ring stage-ring-one"></div><div class="stage-ring stage-ring-two"></div>
+        <div class="stage-label label-top"><span>FIG. 01 / CORE</span><i></i></div>
+        <div class="stage-label label-right"><i></i><span>IDEAS IN ORBIT</span></div>
+        <div class="stage-coordinates">19°08' N<br>72°54' E</div>
+      </div>
+      <div class="hero-bottom"><span>SCROLL TO INITIATE</span><span class="scroll-cue"><i></i></span><span class="hero-index">01 / 05</span></div>
+      <div class="hero-side-note">SCIENCE · TECHNOLOGY · HUMAN POTENTIAL</div>
+    </section>
+
+    <section class="ticker" aria-label="Techfest themes"><div class="ticker-track"><span>BUILD WHAT'S NEXT</span><b>✳</b><span>QUESTION EVERYTHING</span><b>✳</b><span>MAKE IDEAS REAL</span><b>✳</b><span>BUILD WHAT'S NEXT</span><b>✳</b><span>QUESTION EVERYTHING</span><b>✳</b></div></section>
+
+    <section class="explore section-pad" id="explore">
+      <div class="section-top"><p class="eyebrow">01 — THE FESTIVAL UNIVERSE</p><span class="section-aside">SELECT A COORDINATE ↘</span></div>
+      <div class="section-heading-row"><h2>One festival.<br><em>Infinite directions.</em></h2><p>From autonomous machines to ideas that change industries — find the frontier you want to explore.</p></div>
+      <div class="explorer-layout">
+        <div class="explorer-visual" id="explorer-visual"><div class="explorer-glow"></div><div class="explorer-crosshair crosshair-one"></div><div class="explorer-crosshair crosshair-two"></div><div class="explorer-core"><div class="core-glyph">✳</div></div><div class="visual-caption"><span>TECHFEST / SYSTEM MAP</span><span>ACTIVE NODE <b id="active-node">01</b></span></div><div class="orbit-path path-one"></div><div class="orbit-path path-two"></div></div>
+        <div class="explorer-list" role="tablist" aria-label="Festival categories">
+          <button class="explore-item active" role="tab" aria-selected="true" data-node="01" data-title="Robotics & autonomous systems" data-copy="Machines that sense, decide and move. Enter a world of intelligent hardware, autonomous challenges and engineering under pressure." data-symbol="⌘"><span class="item-num">01</span><span class="item-main"><strong>Robotics & autonomous systems</strong><small>HARDWARE / CONTROL / MOBILITY</small></span><span class="item-arrow">↗</span></button>
+          <button class="explore-item" role="tab" aria-selected="false" data-node="02" data-title="Artificial intelligence" data-copy="Explore machine intelligence, data-driven systems and the next generation of computational creativity." data-symbol="◈"><span class="item-num">02</span><span class="item-main"><strong>Artificial intelligence</strong><small>ML / DATA / INTELLIGENCE</small></span><span class="item-arrow">↗</span></button>
+          <button class="explore-item" role="tab" aria-selected="false" data-node="03" data-title="Engineering challenges" data-copy="Put theory to the test through technical problem-solving, design constraints and competitive builds." data-symbol="⌬"><span class="item-num">03</span><span class="item-main"><strong>Engineering challenges</strong><small>DESIGN / PROTOTYPE / TEST</small></span><span class="item-arrow">↗</span></button>
+          <button class="explore-item" role="tab" aria-selected="false" data-node="04" data-title="Coding & hackathons" data-copy="Turn sharp thinking into working systems. Explore coding, algorithmic reasoning and rapid product development." data-symbol="{ }"><span class="item-num">04</span><span class="item-main"><strong>Coding & hackathons</strong><small>SOFTWARE / ALGORITHMS / BUILD</small></span><span class="item-arrow">↗</span></button>
+          <button class="explore-item" role="tab" aria-selected="false" data-node="05" data-title="Innovation & entrepreneurship" data-copy="Move beyond the prototype. Test ideas against real needs, explore scalable solutions and learn to make impact tangible." data-symbol="↗"><span class="item-num">05</span><span class="item-main"><strong>Innovation & entrepreneurship</strong><small>IDEAS / IMPACT / SCALE</small></span><span class="item-arrow">↗</span></button>
+          <button class="explore-item" role="tab" aria-selected="false" data-node="06" data-title="Workshops & learning" data-copy="Build practical skills through hands-on learning across robotics, AI, embedded systems and emerging technologies." data-symbol="⌁"><span class="item-num">06</span><span class="item-main"><strong>Workshops & learning</strong><small>LEARN / MAKE / REPEAT</small></span><span class="item-arrow">↗</span></button>
+          <div class="explorer-detail"><p id="explorer-copy">Machines that sense, decide and move. Enter a world of intelligent hardware, autonomous challenges and engineering under pressure.</p><a href="https://techfest.org/" target="_blank" rel="noreferrer" class="inline-link">Explore on official site <span>↗</span></a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="competition-section section-pad" id="competitions">
+      <div class="section-top"><p class="eyebrow">02 — PROVE THE IMPOSSIBLE</p><span class="section-aside">CHALLENGE ACCEPTED</span></div>
+      <div class="section-heading-row"><h2>Ideas are easy.<br><em>Execution wins.</em></h2><p>Enter the arena. Build something real, solve a hard problem and test your thinking against the unexpected.</p></div>
+      <div class="feature-competition">
+        <div class="competition-art art-wrecking" data-depth="0.1"><div class="art-grid"></div><div class="art-sun"></div><div class="art-robot"><div class="robot-shell"></div><div class="robot-band"></div><div class="robot-eye"></div><div class="robot-orbit"></div></div><span class="art-coord">AUTONOMOUS SYSTEM / 001</span><span class="art-caption">ENGINEERED FOR IMPACT</span></div>
+        <div class="competition-copy"><p class="eyebrow"><span class="live-dot"></span> FEATURED CHALLENGE</p><h3>The Wrecking<br><em>Ball Challenge</em></h3><p>Design and deploy an autonomous, battery-powered spherical robot capable of navigating an obstacle-filled arena using vision-based navigation, stabilization and real-time evasion.</p><div class="competition-meta"><span><small>DISCIPLINE</small>Autonomous robotics</span><span><small>PRIZE POOL</small>₹3,50,000*</span></div><a class="button button-primary" href="https://techfest.org/competitions/Blixathon/register" target="_blank" rel="noreferrer">Explore competition <span>↗</span></a><p class="fine-print">*Prize information shown as listed on the official site; verify current details and registration status before participating.</p></div>
+      </div>
+      <div class="challenge-strip"><a class="challenge-card" href="https://techfest.org/competitions/ev-infra" target="_blank" rel="noreferrer"><span class="challenge-num">CHALLENGE / 02</span><span class="challenge-icon">↗</span><h4>EV Infra &<br>Green Mobility AI</h4><p>AI-powered solutions for EV infrastructure and sustainable mobility.</p><span class="card-bottom">EXPLORE <b>↗</b></span></a><a class="challenge-card" href="https://techfest.org/competitions/innovatex" target="_blank" rel="noreferrer"><span class="challenge-num">CHALLENGE / 03</span><span class="challenge-icon">⌬</span><h4>InnovateX</h4><p>Engineer practical responses to urban and environmental challenges.</p><span class="card-bottom">EXPLORE <b>↗</b></span></a><a class="challenge-card" href="https://techfest.org/competitions" target="_blank" rel="noreferrer"><span class="challenge-num">THE FULL LINEUP</span><span class="challenge-icon">⤴</span><h4>Your next<br>big challenge.</h4><p>Discover more competitions and check the latest official details.</p><span class="card-bottom">ALL COMPETITIONS <b>↗</b></span></a></div>
+      <p class="section-footnote">Competition names and summaries are based on official Techfest pages. Availability and details may change.</p>
+    </section>
+
+    <section class="workshops-section section-pad" id="workshops">
+      <div class="section-top"><p class="eyebrow">03 — LEARN BY BUILDING</p><span class="section-aside">KNOWLEDGE → CAPABILITY</span></div>
+      <div class="section-heading-row"><h2>Skills for a world<br><em>still being invented.</em></h2><p>Go beyond the lecture. Develop practical capability with technology that is shaping the next decade.</p></div>
+      <div class="workshop-grid">
+        <a class="workshop-card workshop-feature" href="https://techfest.org/workshops" target="_blank" rel="noreferrer"><div class="workshop-visual visual-ai"><div class="ai-orbit ai-orbit-a"></div><div class="ai-orbit ai-orbit-b"></div><div class="ai-chip">AI<span>+</span></div><div class="visual-tag">01 / INTELLIGENCE</div></div><div class="workshop-info"><span>AI & DATA</span><h3>Build systems<br>that think.</h3><p>Machine learning · Deep learning · Agentic AI</p><b class="round-arrow">↗</b></div></a>
+        <a class="workshop-card" href="https://techfest.org/workshops" target="_blank" rel="noreferrer"><div class="workshop-visual visual-robot"><div class="robot-arm"><i></i><b></b><span></span></div><div class="visual-tag">02 / ENGINEERING</div></div><div class="workshop-info"><span>ENGINEERING & ROBOTICS</span><h3>Make intelligence<br>move.</h3><p>Robotics · IoT · Drone technology</p><b class="round-arrow">↗</b></div></a>
+        <a class="workshop-card" href="https://techfest.org/workshops" target="_blank" rel="noreferrer"><div class="workshop-visual visual-cyber"><div class="cyber-lock">⌑</div><div class="cyber-lines"></div><div class="visual-tag">03 / SECURITY</div></div><div class="workshop-info"><span>TECHNOLOGY & SECURITY</span><h3>Think in systems.<br>Defend the future.</h3><p>Cybersecurity · Cloud · Full stack</p><b class="round-arrow">↗</b></div></a>
+      </div>
+      <div class="workshops-cta"><span>CURIOUS ABOUT SOMETHING ELSE?</span><a class="inline-link" href="https://techfest.org/workshops" target="_blank" rel="noreferrer">Browse all official workshops <span>↗</span></a></div>
+    </section>
+
+    <section class="manifesto" id="about"><div class="manifesto-bg" aria-hidden="true"><div class="manifesto-orbit"></div><div class="manifesto-orbit orbit-inner"></div><div class="manifesto-cross">✳</div></div><div class="manifesto-content"><p class="eyebrow">04 — A VISION BEYOND BOUNDARIES</p><h2>ENGINEER<br><em>TOMORROW.</em><br>EXPERIENCE<br>THE IMPOSSIBLE<span>.</span></h2><div class="manifesto-bottom"><p>Techfest, IIT Bombay brings curious minds together around science, engineering and technology. A platform to test ideas, learn from others and push the edge of what’s possible.</p><a class="button button-outline" href="https://techfest.org/" target="_blank" rel="noreferrer">Meet Techfest <span>↗</span></a></div></div><span class="manifesto-index">TF / 2026—27</span></section>
+
+    <section class="final-cta"><div class="cta-grid"></div><p class="eyebrow">THE NEXT MOVE IS YOURS</p><h2>Curiosity is<br><em>a starting point.</em></h2><p>Find your challenge. Learn a new skill. Build something that matters.</p><a class="button button-primary" href="https://techfest.org/" target="_blank" rel="noreferrer">Enter Techfest <span>↗</span></a><div class="cta-stamp">THINK<br>BUILD<br>REPEAT<span>✳</span></div></section>
+  </main>
+
+  <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark">T<span>F</span></span><span class="brand-copy">TECHFEST <small>IIT BOMBAY</small></span></a><p>THE FUTURE IS BUILT BY THOSE WHO DARE TO EXPLORE.</p><div class="footer-links"><a href="https://techfest.org/" target="_blank" rel="noreferrer">Official website ↗</a><a href="https://www.instagram.com/techfest_iitbombay/" target="_blank" rel="noreferrer">Instagram ↗</a><a href="#home">Back to top ↑</a></div><small class="copyright">© TECHFEST, IIT BOMBAY · CONCEPT REDESIGN</small></footer>
+  <noscript><div class="noscript-note">JavaScript is disabled. Navigation and official links remain available; 3D and scroll effects require JavaScript.</div></noscript>
+</body>
+</html>
